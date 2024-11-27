@@ -25,6 +25,7 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0px;
+  overflow-x: hidden;
 }
 
 img {
