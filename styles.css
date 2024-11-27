@@ -53,6 +53,11 @@ header {
 }
 
 nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wider-screen-nav {
   align-self: center;
   width: 60%;
   display: flex;
@@ -375,7 +380,6 @@ hr {
 #view-img {
   border-bottom-left-radius: 150px;
   box-shadow: -22px 22px 0px 0px #a2d3a1;
-  width: 100%;
   margin: 5px;
 }
 
@@ -822,5 +826,347 @@ footer p {
     -webkit-filter: blur(0);
     filter: blur(0);
     opacity: 1;
+  }
+}
+
+.smaller-screen-nav {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  color: white;
+  margin-top: 15px;
+}
+
+.smaller-screen-nav img {
+  max-width: 70px;
+  height: auto;
+}
+
+.smaller-screen-nav div {
+  display: none;
+}
+
+@media (max-width: 1550px) {
+  header > section {
+    width: 70%;
+  }
+}
+
+@media (max-width: 1420px) {
+  header > section,
+  .wider-screen-nav,
+  .villa-story,
+  .villa-offering-article,
+  .small-book-stay {
+    width: 75%;
+  }
+
+  .carousel-button.right {
+    right: 10%;
+  }
+  .carousel-button.left {
+    left: 10%;
+  }
+}
+
+@media (max-width: 1245px) {
+  h1 {
+    font-size: 3rem;
+  }
+  .carousel-button.right {
+    right: 4%;
+  }
+  .carousel-button.left {
+    left: 4%;
+  }
+}
+
+@media (max-width: 1045px) {
+  header > section,
+  .wider-screen-nav,
+  .villa-story,
+  .villa-offering-article,
+  .small-book-stay {
+    width: 85%;
+  }
+
+  .villa-offering-article img {
+    width: 350px;
+  }
+
+  .carousel-button.right {
+    display: none;
+  }
+  .carousel-button.left {
+    display: none;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .wider-screen-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 890px) {
+  .smaller-screen-nav {
+    display: flex;
+  }
+  #view-offerings,
+  #playgrond-offerings,
+  #pool-offerings,
+  #accomoditation-offerings {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .villa-offering-article {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 10px;
+  }
+  .villa-offering-article img {
+    width: 50%;
+  }
+
+  #view-offerings {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+  }
+
+  #view-img {
+    border-bottom-right-radius: 100px;
+    border-bottom-left-radius: 15px;
+    box-shadow: 12px 12px 0px 0px #a2d3a1;
+    margin: 5px;
+  }
+
+  #playground-img {
+    border-top-left-radius: 100px;
+    border-top-right-radius: 15px;
+    box-shadow: -12px -12px 0px 0px #a2d3a1;
+    margin: 5px;
+  }
+
+  #accomoditation-offerings {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  #accomoditation-img {
+    border-bottom-right-radius: 100px;
+    box-shadow: 12px 12px 0px 0px #a2d3a1;
+    margin: 5px;
+  }
+
+  #pool-img {
+    border-top-left-radius: 100px;
+    box-shadow: -12px -12px 0px 0px #a2d3a1;
+    margin: 5px;
+  }
+
+  #first-block div h3,
+  #second-block div h3 {
+    margin-top: 10px;
+    font-size: 2rem;
+  }
+
+  #pool-offerings div,
+  #view-offerings div {
+    text-align: left;
+  }
+
+  #pool-offerings div,
+  #view-offerings div,
+  #accomoditation-offerings div,
+  #playgrond-offerings div {
+    margin: 10px;
+  }
+
+  #first-block {
+    margin-bottom: 10px;
+  }
+  #second-block {
+    margin-top: 10px;
+  }
+
+  #offerings-title {
+    font-size: 2.5rem;
+  }
+
+  .info-wrapper {
+    width: 95%;
+  }
+  .info-wrapper div {
+    margin: 10px;
+  }
+  .footer-title {
+    font-size: 1.2rem;
+  }
+
+  footer p {
+    font-weight: 300;
+  }
+
+  .copyright {
+    font-weight: 200;
+  }
+}
+
+@media (max-width: 800px) {
+  .journey-wrapper h2 {
+    font-size: 1.7rem;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  header > section {
+    width: 95%;
+  }
+}
+
+@media (max-width: 730px) {
+  .villa-story {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 20px 10px;
+  }
+
+  .villa-story img {
+    width: 95%;
+    border-radius: 15px;
+    box-shadow: 10px 10px 0px 0px #d0ebcf;
+    margin: 10px;
+  }
+
+  .story-villa-article {
+    margin: 10px;
+  }
+
+  .small-book-stay h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 695px) {
+  #pool-offerings,
+  #view-offerings,
+  #playgrond-offerings,
+  #accomoditation-offerings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .offerings img {
+    width: 90%;
+  }
+
+  .offerings h3 {
+    font-size: 1.5rem;
+  }
+
+  #first-block div h3,
+  #second-block div h3 {
+    font-size: 1.5rem;
+  }
+
+  #view-img {
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 12px -12px 0px 0px #a2d3a1;
+    margin: 5px;
+  }
+
+  #accomoditation-img {
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 100px;
+    box-shadow: 12px -12px 0px 0px #a2d3a1;
+    margin: 5px;
+  }
+
+  .small-book-stay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carousel-wrapper {
+    height: 350px;
+  }
+
+  .carousel-track {
+    width: 50%;
+  }
+}
+
+@media (max-width: 542px) {
+  #start-journey-title {
+    font-size: 1.35rem;
+  }
+
+  .journey-wrapper p,
+  .journey-wrapper p:nth-of-type(2) {
+    font-size: 1.15rem;
+    font-weight: 400;
+  }
+
+  .journey-wrapper a {
+    max-width: 40%;
+    max-height: 3%;
+    font-size: 14px;
+  }
+
+  .gallery-wrapper h3 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 3.65rem;
+  }
+
+  #first-block,
+  #second-block {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .gallery-wrapper h3 {
+    font-size: 2.5rem;
+  }
+
+  #start-journey-title {
+    font-size: 1.6rem;
+  }
+
+  .info-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .info-wrapper div {
+    margin: 5px;
+  }
+
+  .info-wrapper p {
+    margin-bottom: 5px;
   }
 }

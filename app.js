@@ -183,3 +183,43 @@ galleryObserver.observe(galleryParagraph);
 galleryObserver.observe(carouselWrapper);
 
 //comment for commit
+
+const h1 = document.getElementById("main-title");
+const titleParagraph = document.getElementById("paragraph-title");
+const journeryTitle = document.getElementById("start-journey-title");
+
+const changeH1size = () => {
+  const screenWidth = window.innerWidth;
+  if (screenWidth < 730) {
+    console.log("++");
+    h1.textContent = "Welcome to Villa Jure";
+    titleParagraph.textContent = "Tranquility made timeless";
+    galleryParagraph.textContent =
+      "Explore our gallery for beautiful spaces and serenity.";
+    journeryTitle.textContent = "Begin your journey with Villa Jure!";
+  } else {
+    h1.textContent = "Experience Luxury at Villa Jure";
+    titleParagraph.textContent =
+      " Your dream getaway awaits in beautiful Kastela";
+    galleryParagraph.textContent =
+      "Explore our gallery for beautiful spaces and serenity.";
+    journeryTitle.textContent = "Start Your Journey with Villa Jure Today!";
+  }
+  if (screenWidth < 500) {
+    h1.textContent = "Villa Jure";
+    galleryTitle.textContent = "Villa's Gallery";
+    galleryParagraph.textContent = "Explore beautiful spaces.";
+    journeryTitle.textContent = "Your journey starts here";
+  } else {
+    h1.textContent = "Tranquility made timeless";
+    titleParagraph.textContent =
+      " Your dream getaway awaits in beautiful Kastela";
+    galleryTitle.textContent = "Check out our gallery!";
+    galleryParagraph.textContent =
+      "Browse through our gallery to see the villa's beautiful spaces and serene surroundings.";
+    journeryTitle.textContent = "Begin your journey with Villa Jure!";
+  }
+};
+
+changeH1size();
+window.addEventListener("resize", changeH1size);
