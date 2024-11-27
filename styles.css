@@ -7,6 +7,7 @@ html {
   font-size: 16px;
   letter-spacing: 1px;
   margin: 0px;
+  overflow-x: hidden;
 }
 
 :root {
@@ -550,94 +551,102 @@ hr {
   opacity: 0;
 }
 
-/* Modal styling for enlarged image */
+/* General Modal Styles */
 .modal {
-  display: none;
+  display: flex;
   position: fixed;
+  flex-direction: column;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.95); /* Darker background */
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background */
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 1000;
+  overflow: hidden;
+  display: none;
 }
 
+/* Modal Image */
 .modal-image {
-  max-width: 60vw;
-  max-height: 60vh;
-  object-fit: contain;
+  max-width: 90%; /* Limit the image size */
+  max-height: 80%; /* Limit the image height */
+  object-fit: contain; /* Ensure the image fits within the modal */
+  margin-bottom: 20px; /* Space for the buttons */
+}
+
+.modal-navigation {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
 }
 
 .close-btn {
-  position: absolute;
-  bottom: 100px; /* Closer to the image */
-  background-color: rgb(50, 50, 50, 0.5);
-  color: white;
-  padding: 10px 15px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 50%;
   left: 50%;
-  transition: transform 0.3s ease;
-}
-
-.close-btn:hover {
-  cursor: pointer;
-  transform: scale(1.15);
-  background-color: rgba(224, 224, 224, 0.805);
-  color: black;
-}
-
-.modal {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 100;
-}
-
-.modal img {
-  max-width: 90%;
-  max-height: 80%;
-  border-radius: 10px;
-}
-
-.modal-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 10px 20px;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 20;
-  box-sizing: border-box;
-}
-
-.modal-nav-button {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: var(--paragraphs-color-dark);
   border: none;
-  color: black;
-  font-size: 1rem;
-  padding: 8px 16px;
-  border-radius: 5px;
-  cursor: pointer;
+  color: var(--paragraphs-color-light);
+  font-size: 30px;
+
+  border-radius: 50%;
+  z-index: 10;
+  height: 80%;
+  padding: 0px 10px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.modal-nav-button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
+.close-btn:hover {
+  background-color: var(--paragraphs-color-light);
+  color: var(--paragraphs-color-dark);
+  cursor: pointer;
 }
+
+#modal-prev-btn,
+#modal-next-btn {
+  color: var(--paragraphs-color-light);
+  width: 40px;
+  height: 40px;
+  background-color: var(--paragraphs-color-dark);
+  border: none;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#modal-prev-btn:hover,
+#modal-next-btn:hover {
+  background-color: var(--paragraphs-color-light);
+  color: var(--paragraphs-color-dark);
+  cursor: pointer;
+}
+
+@media (min-width: 1370px) {
+  .modal-navigation {
+    width: 70%;
+  }
+}
+
+/* .modal-nav-button {
+  width: 5%;
+  position: absolute;
+  bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  color: #000;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background-color 0.3s;
+}
+
+.modal-nav-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+} */
 
 .gallery-wrapper {
   background-color: rgb(1, 21, 2);
@@ -742,7 +751,7 @@ footer hr {
 
 footer p {
   color: var(--paragraphs-color-light);
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .copyright {
