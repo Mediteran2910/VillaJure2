@@ -72,6 +72,123 @@ closeButton.addEventListener("click", () => {
   modal.style.display = "none"; // Hide the modal
 });
 
+// Update the carousel display
+function updateCarousel() {
+  carouselItems.forEach((item, index) => {
+    item.classList.remove(
+      "center",
+      "left",
+      "right",
+      "far-left",
+      "far-right",
+      "hidden"
+    );
+
+    if (index === currentIndex) {
+      item.classList.add("center");
+    } else if (
+      index ===
+      (currentIndex - 1 + carouselItems.length) % carouselItems.length
+    ) {
+      item.classList.add("left");
+    } else if (index === (currentIndex + 1) % carouselItems.length) {
+      item.classList.add("right");
+    } else if (
+      index ===
+      (currentIndex - 2 + carouselItems.length) % carouselItems.length
+    ) {
+      item.classList.add("far-left");
+    } else if (index === (currentIndex + 2) % carouselItems.length) {
+      item.classList.add("far-right");
+    } else {
+      item.classList.add("hidden");
+    }
+  });
+}
+
+// Move to the previous image
+prevButton.addEventListener("click", () => {
+  currentIndex =
+    (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+  updateCarousel();
+});
+
+// Move to the next image
+nextButton.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % carouselItems.length;
+  updateCarousel();
+});
+
+// Initialize the carousel
+updateCarousel();
+
+// Handle clicking on carousel item to enlarge the image
+carouselItems.forEach((item, index) => {
+  item.addEventListener("click", () => {
+    modal.style.display = "flex"; // Show the modal
+    modalImage.src = item.src; // Set the clicked image to the modal
+    currentIndex = index; // Update current index
+    updateModalImage();
+  });
+});
+
+// Update the modal image based on the current index
+function updateModalImage() {
+  modalImage.src = carouselItems[currentIndex].src;
+}
+
+// Show the next image in modal
+function showNextImage() {
+  currentIndex = (currentIndex + 1) % carouselItems.length;
+  updateModalImage();
+}
+
+// Show the previous image in modal
+function showPrevImage() {
+  currentIndex =
+    (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+  updateModalImage();
+}
+
+// Add swipe functionality for the modal
+let startX = 0;
+
+modalImage.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+
+modalImage.addEventListener("touchend", (e) => {
+  const endX = e.changedTouches[0].clientX;
+  if (startX - endX > 50) {
+    showNextImage(); // Swipe left
+  } else if (endX - startX > 50) {
+    showPrevImage(); // Swipe right
+  }
+});
+
+// Close the modal when the close button is clicked
+closeButton.addEventListener("click", () => {
+  modal.style.display = "none"; // Hide the modal
+});
+
+// Add navigation buttons in full-screen mode below the image
+const modalControls = document.createElement("div");
+modalControls.className = "modal-controls";
+
+const modalPrevButton = document.createElement("button");
+modalPrevButton.className = "modal-nav-button";
+modalPrevButton.innerHTML = "&#9664; Previous";
+modalPrevButton.addEventListener("click", showPrevImage);
+
+const modalNextButton = document.createElement("button");
+modalNextButton.className = "modal-nav-button";
+modalNextButton.innerHTML = "Next &#9654;";
+modalNextButton.addEventListener("click", showNextImage);
+
+modalControls.appendChild(modalPrevButton);
+modalControls.appendChild(modalNextButton);
+modal.appendChild(modalControls);
+
 const offeringsTitle = document.querySelector("#offerings-title");
 const firstBlockParagraph = document.querySelector("#first-block p");
 const firstBlockHr = document.querySelector("#first-block hr");
@@ -190,8 +307,13 @@ const journeryTitle = document.getElementById("start-journey-title");
 
 const changeH1size = () => {
   const screenWidth = window.innerWidth;
-  if (screenWidth < 730) {
-    console.log("++");
+
+  if (screenWidth < 500) {
+    h1.textContent = "Villa Jure";
+    galleryTitle.textContent = "Villa's Gallery";
+    galleryParagraph.textContent = "Explore beautiful spaces.";
+    journeryTitle.textContent = "Your journey starts here";
+  } else if (screenWidth < 730) {
     h1.textContent = "Welcome to Villa Jure";
     titleParagraph.textContent = "Tranquility made timeless";
     galleryParagraph.textContent =
@@ -200,26 +322,14 @@ const changeH1size = () => {
   } else {
     h1.textContent = "Experience Luxury at Villa Jure";
     titleParagraph.textContent =
-      " Your dream getaway awaits in beautiful Kastela";
-    galleryParagraph.textContent =
-      "Explore our gallery for beautiful spaces and serenity.";
-    journeryTitle.textContent = "Start Your Journey with Villa Jure Today!";
-  }
-  if (screenWidth < 500) {
-    h1.textContent = "Villa Jure";
-    galleryTitle.textContent = "Villa's Gallery";
-    galleryParagraph.textContent = "Explore beautiful spaces.";
-    journeryTitle.textContent = "Your journey starts here";
-  } else {
-    h1.textContent = "Tranquility made timeless";
-    titleParagraph.textContent =
-      " Your dream getaway awaits in beautiful Kastela";
+      "Your dream getaway awaits in beautiful Kastela";
     galleryTitle.textContent = "Check out our gallery!";
     galleryParagraph.textContent =
       "Browse through our gallery to see the villa's beautiful spaces and serene surroundings.";
-    journeryTitle.textContent = "Begin your journey with Villa Jure!";
+    journeryTitle.textContent = "Start Your Journey with Villa Jure Today!";
   }
 };
 
+// Initial call and resize event listener
 changeH1size();
 window.addEventListener("resize", changeH1size);

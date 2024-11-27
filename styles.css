@@ -589,6 +589,55 @@ hr {
   color: black;
 }
 
+.modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+.modal-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  box-sizing: border-box;
+}
+
+.modal-nav-button {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  color: black;
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.modal-nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
 .gallery-wrapper {
   background-color: rgb(1, 21, 2);
   width: 100%;
@@ -1111,7 +1160,7 @@ footer p {
   }
 
   .carousel-track {
-    width: 50%;
+    width: 65%;
   }
 }
 
@@ -1168,5 +1217,9 @@ footer p {
 
   .info-wrapper p {
     margin-bottom: 5px;
+  }
+
+  .carousel-track {
+    width: 80%;
   }
 }
