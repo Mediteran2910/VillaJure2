@@ -299,23 +299,31 @@ galleryObserver.observe(galleryTitle);
 galleryObserver.observe(galleryParagraph);
 galleryObserver.observe(carouselWrapper);
 
-//comment for commit
+// Adjust the h1 size on page load and on resize
+window.onload = () => {
+  changeH1size();
+};
 
-const h1 = document.getElementById("main-title");
-const titleParagraph = document.getElementById("paragraph-title");
-const journeryTitle = document.getElementById("start-journey-title");
+window.addEventListener("resize", () => {
+  changeH1size();
+});
 
-const changeH1size = () => {
+function changeH1size() {
+  const h1 = document.querySelector("#main-title");
+  const titleParagraph = document.getElementById("paragraph-title");
+  const journeryTitle = document.getElementById("start-journey-title");
+
   const screenWidth = window.innerWidth;
-
+  // Check window width and update the h1 text
   if (screenWidth < 500) {
     h1.textContent = "Villa Jure";
+    titleParagraph.textContent = "Tranquility made timeless";
     galleryTitle.textContent = "Villa's Gallery";
     galleryParagraph.textContent = "Explore beautiful spaces.";
     journeryTitle.textContent = "Your journey starts here";
   } else if (screenWidth < 730) {
     h1.textContent = "Welcome to Villa Jure";
-    titleParagraph.textContent = "Tranquility made timeless";
+    titleParagraph.textContent = "Villa between sea and hills.";
     galleryParagraph.textContent =
       "Explore our gallery for beautiful spaces and serenity.";
     journeryTitle.textContent = "Begin your journey with Villa Jure!";
@@ -328,8 +336,6 @@ const changeH1size = () => {
       "Browse through our gallery to see the villa's beautiful spaces and serene surroundings.";
     journeryTitle.textContent = "Start Your Journey with Villa Jure Today!";
   }
-};
+}
 
-// Initial call and resize event listener
-changeH1size();
-window.addEventListener("resize", changeH1size);
+// Ensure CSS file has the necessary rules for transition effects
