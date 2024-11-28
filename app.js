@@ -243,3 +243,15 @@ function changeH1size() {
 }
 window.addEventListener("resize", changeH1size);
 changeH1size();
+
+const menuIcon = document.getElementById("menu-icon");
+const closeMenuIcon = document.querySelector(".close-icon-menu");
+const mobileMenu = document.getElementsByClassName("nav-links")[0];
+
+menuIcon.addEventListener("click", () => {
+  mobileMenu.style.display = "flex";
+});
+
+closeMenuIcon.addEventListener("click", () => {
+  mobileMenu.style.display = "none";
+});

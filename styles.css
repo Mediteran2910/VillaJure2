@@ -45,9 +45,9 @@ header {
   height: 500px;
   background-image: url("smanjene slike/background-pool-homepagewebp.webp"),
     linear-gradient(rgba(6, 49, 6, 0.5), rgba(6, 49, 6, 0.5));
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
   display: flex;
   flex-direction: column;
   background-blend-mode: darken;
@@ -629,25 +629,6 @@ hr {
   }
 }
 
-/* .modal-nav-button {
-  width: 5%;
-  position: absolute;
-  bottom: 10px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: none;
-  color: #000;
-  font-size: 30px;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 50%;
-  z-index: 10;
-  transition: background-color 0.3s;
-}
-
-.modal-nav-button:hover {
-  background-color: rgba(255, 255, 255, 1);
-} */
-
 .gallery-wrapper {
   background-color: rgb(1, 21, 2);
   width: 100%;
@@ -684,8 +665,9 @@ hr {
     linear-gradient(rgba(2, 22, 2, 0.5), rgba(2, 21, 2, 0.5));
   width: 100%;
   height: 500px;
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -759,6 +741,15 @@ footer p {
   font-family: var(--paragraphs-font);
   font-weight: 400;
   margin: 20px;
+}
+
+#menu-icon {
+  transition: transform 0.3s ease;
+}
+
+#menu-icon:hover {
+  transform: scale(1.15);
+  cursor: pointer;
 }
 
 .tracking-in-expand {
@@ -895,14 +886,15 @@ footer p {
   width: 85%;
   color: white;
   margin-top: 15px;
+  display: none;
 }
 
 .smaller-screen-nav img {
-  max-width: 70px;
+  max-width: 90px;
   height: auto;
 }
 
-.smaller-screen-nav div {
+.smaller-screen-nav {
   display: none;
 }
 
@@ -968,12 +960,88 @@ footer p {
   .wider-screen-nav {
     display: none;
   }
+
+  nav {
+    position: relative;
+    z-index: 2;
+  }
+
+  .smaller-screen-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+  }
+
+  .logo-menu-icons {
+    display: flex;
+    width: 95%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    margin-top: -15px;
+    margin-right: -80px;
+    width: 45%;
+    padding: 30px 0px;
+    background-color: rgb(0, 49, 3);
+    border-bottom-left-radius: 100px;
+    transition: transoform 0.3s ease;
+    display: none;
+  }
+
+  .nav-links a {
+    font-size: 2rem;
+    margin: 20px;
+    color: var(--paragraphs-color-light);
+    text-transform: lowercase;
+  }
+
+  .nav-links a::first-letter {
+    text-transform: capitalize;
+  }
+
+  .nav-links a:hover,
+  .close-icon-menu:hover {
+    transform: scale(1.2);
+  }
+
+  .close-icon-menu {
+    width: 50px;
+    align-self: flex-end;
+    margin-right: 50px;
+    margin-top: 15px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+
+  header {
+    position: relative;
+    z-index: 0;
+  }
+
+  header > section {
+    position: relative;
+    z-index: 0;
+  }
 }
 
 @media (max-width: 890px) {
-  .smaller-screen-nav {
-    display: flex;
-  }
   #view-offerings,
   #playgrond-offerings,
   #pool-offerings,
@@ -1091,6 +1159,18 @@ footer p {
   header > section {
     width: 95%;
   }
+
+  .nav-links {
+    margin-top: -15px;
+    margin-right: -80px;
+    width: 75%;
+    padding: 50px 0px;
+  }
+
+  .close-icon-menu {
+    margin-top: 0px;
+    margin-right: 60px;
+  }
 }
 
 @media (max-width: 730px) {
@@ -1116,6 +1196,10 @@ footer p {
 
   .small-book-stay h3 {
     font-size: 1.5rem;
+  }
+
+  #menu-icon {
+    width: 60px;
   }
 }
 
@@ -1231,5 +1315,18 @@ footer p {
 
   .carousel-track {
     width: 80%;
+  }
+
+  .nav-links {
+    margin-top: -15px;
+    margin-right: -80px;
+    width: 95%;
+    padding: 50px 0px;
+    padding-right: 25px;
+  }
+
+  .close-icon-menu {
+    margin-top: 0px;
+    margin-right: 70px;
   }
 }
