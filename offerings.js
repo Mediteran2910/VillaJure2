@@ -124,7 +124,7 @@ closeButton.addEventListener("click", () => {
 
 // Define the intersection observer options
 const options = {
-  threshold: 0.6, // 50% of the element must be visible to trigger the animation
+  threshold: 0.3, // 50% of the element must be visible to trigger the animation
 };
 
 // Function to add animation classes for various elements

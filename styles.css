@@ -733,11 +733,34 @@ footer hr {
   margin-bottom: 30px;
 }
 
+footer span,
 footer p {
   color: var(--paragraphs-color-light);
   font-weight: 300;
+  font-family: var(--paragraphs-font);
 }
 
+.footer-icons {
+  height: 20px;
+  width: auto;
+  margin-right: 10px;
+  margin-left: -10px;
+}
+
+footer div {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.info-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
 .copyright {
   color: var(--paragraphs-color-light);
   font-family: var(--paragraphs-font);
@@ -1286,6 +1309,20 @@ footer p {
   .gallery-wrapper h3 {
     font-size: 2rem;
   }
+
+  .info-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .info-wrapper div {
+    margin: 5px;
+  }
+
+  .info-wrapper p {
+    margin-bottom: 5px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -1305,20 +1342,6 @@ footer p {
 
   #start-journey-title {
     font-size: 1.6rem;
-  }
-
-  .info-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-  }
-  .info-wrapper div {
-    margin: 5px;
-  }
-
-  .info-wrapper p {
-    margin-bottom: 5px;
   }
 
   .carousel-track {
