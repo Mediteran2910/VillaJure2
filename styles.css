@@ -34,6 +34,14 @@ img {
   border-radius: 15px;
 }
 
+p {
+  font-family: var(--paragraphs-font);
+  color: var(--paragraphs-color-dark);
+  font-weight: 400;
+  letter-spacing: 1.1px;
+  line-height: 18px;
+}
+
 nav,
 main,
 footer {
@@ -623,12 +631,6 @@ hr {
   cursor: pointer;
 }
 
-@media (min-width: 1370px) {
-  .modal-navigation {
-    width: 70%;
-  }
-}
-
 .gallery-wrapper {
   background-color: rgb(1, 21, 2);
   width: 100%;
@@ -918,6 +920,12 @@ footer p {
   }
   .carousel-button.left {
     left: 10%;
+  }
+}
+
+@media (min-width: 1370px) {
+  .modal-navigation {
+    width: 70%;
   }
 }
 

@@ -16,16 +16,19 @@
     <header>
       <nav>
         <div class="smaller-screen-nav">
-          <h3>Villa Jure</h3>
+          <div class="logo-menu-icons">
+            <img src="logo/logo gotov.png" alt="" height="100px" />
+            <img src="icone/Menu.png" id="menu-icon" alt="" />
+          </div>
           <div class="nav-links">
+            <img src="icone/Close-light-color.png" class="close-icon-menu" />
             <a href="index.html">HOME</a>
             <a href="offerings.html">OFFERINGS</a>
             <a href="">CONTACT</a>
           </div>
         </div>
         <div class="wider-screen-nav">
-          <img src="icone/bath.svg" alt="" />
-          <img src="icone/Barbecue.svg" alt="" />
+          <img src="logo/logo gotov.png" alt="" height="100px" />
           <div class="nav-links">
             <a href="index.html">HOME</a>
             <a href="offerings.html">OFFERINGS</a>
@@ -35,8 +38,8 @@
         </div>
       </nav>
       <section>
-        <h1>Discover the charm of Villa Jure</h1>
-        <p>An oasis of peace in the heart of Dalmatia.</p>
+        <h1 id="main-title">Discover the charm of Villa Jure</h1>
+        <p id="paragraph-title">An oasis of peace in the heart of Dalmatia.</p>
         <a href="" class="book-now">BOOK YOUR STAY</a>
       </section>
     </header>
@@ -481,18 +484,24 @@
 
         <!-- Modal for enlarged image -->
         <div id="modal" class="modal">
-          <span class="close-btn">X</span>
           <img
             id="modal-image"
             class="modal-image"
             src=""
             alt="Enlarged Image"
           />
+          <div class="modal-navigation">
+            <button id="modal-prev-btn">&#9664;</button>
+            <button class="close-btn">X</button>
+            <button id="modal-next-btn">&#9654;</button>
+          </div>
         </div>
       </section>
       <section class="journey-wrapper">
         <hr />
-        <h2>Start Your Journey with Villa Jure Today!</h2>
+        <h2 id="start-journey-title">
+          Start Your Journey with Villa Jure Today!
+        </h2>
         <a href="" class="book-now">BOOK YOUR STAY</a>
         <p>OR</p>
         <p>Call or text: +385 99 6899 953</p>
