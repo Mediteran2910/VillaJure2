@@ -7,7 +7,11 @@ const modal = document.getElementById("modal");
 const modalImage = document.getElementById("modal-image");
 const closeButton = document.querySelector(".close-btn");
 
+const modalPrevButton = document.querySelector("#modal-prev-btn");
+const modalNextButton = document.querySelector("#modal-next-btn");
+
 let currentIndex = 0;
+let startX = 0; // For swipe functionality
 
 // Update the carousel display
 function updateCarousel() {
@@ -50,7 +54,6 @@ prevButton.addEventListener("click", () => {
   updateCarousel();
 });
 
-// Move to the next image
 nextButton.addEventListener("click", () => {
   currentIndex = (currentIndex + 1) % carouselItems.length;
   updateCarousel();
@@ -64,14 +67,9 @@ carouselItems.forEach((item, index) => {
   item.addEventListener("click", () => {
     modal.style.display = "flex"; // Show the modal
     modalImage.src = item.src; // Set the clicked image to the modal
-    currentIndex = index; // Update current index for modal navigation
-    updateModalImage(); // Update the modal image based on index
+    currentIndex = index; // Update current index
+    updateModalImage();
   });
-});
-
-// Close the modal when the close button is clicked
-closeButton.addEventListener("click", () => {
-  modal.style.display = "none"; // Hide the modal
 });
 
 // Update the modal image based on the current index
@@ -79,22 +77,19 @@ function updateModalImage() {
   modalImage.src = carouselItems[currentIndex].src;
 }
 
-// Show the next image in modal
-function showNextImage() {
-  currentIndex = (currentIndex + 1) % carouselItems.length;
-  updateModalImage();
-}
-
-// Show the previous image in modal
-function showPrevImage() {
+// Modal navigation
+modalPrevButton.addEventListener("click", () => {
   currentIndex =
     (currentIndex - 1 + carouselItems.length) % carouselItems.length;
   updateModalImage();
-}
+});
 
-// Add swipe functionality for the modal
-let startX = 0;
+modalNextButton.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % carouselItems.length;
+  updateModalImage();
+});
 
+// Swipe for modal
 modalImage.addEventListener("touchstart", (e) => {
   startX = e.touches[0].clientX;
 });
@@ -102,42 +97,93 @@ modalImage.addEventListener("touchstart", (e) => {
 modalImage.addEventListener("touchend", (e) => {
   const endX = e.changedTouches[0].clientX;
   if (startX - endX > 50) {
-    showNextImage(); // Swipe left
+    modalNextButton.click();
   } else if (endX - startX > 50) {
-    showPrevImage(); // Swipe right
+    modalPrevButton.click();
   }
 });
 
-// Get references to the modal navigation buttons
-const modalPrevButton = document.querySelector("#modal-prev-btn");
-const modalNextButton = document.querySelector("#modal-next-btn");
-
-// Move to the previous image in modal
-modalPrevButton.addEventListener("click", () => {
-  showPrevImage();
+// Swipe for carousel
+carouselTrack.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
 });
 
-// Move to the next image in modal
-modalNextButton.addEventListener("click", () => {
-  showNextImage();
+carouselTrack.addEventListener("touchend", (e) => {
+  const endX = e.changedTouches[0].clientX;
+  if (startX - endX > 50) {
+    nextButton.click();
+  } else if (endX - startX > 50) {
+    prevButton.click();
+  }
 });
+
+// Close the modal
+closeButton.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Intersection Observer options
+const options = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.3,
+};
+
+// Offerings Animation
+const offeringsTitle = document.querySelector("#offerings-title");
+const firstBlockParagraph = document.querySelector("#first-block p");
+const firstBlockHr = document.querySelector("#first-block hr");
+const firstBlockItems = [
+  document.querySelector("#pool-offerings"),
+  document.querySelector("#view-offerings"),
+];
+const secondBlockItems = [
+  document.querySelector("#playgrond-offerings"),
+  document.querySelector("#accomoditation-offerings"),
+];
+
+const observerCallback = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      if (
+        entry.target === offeringsTitle ||
+        entry.target === firstBlockParagraph ||
+        entry.target === firstBlockHr
+      ) {
+        entry.target.classList.add("slide-in-blurred-left");
+      }
+
+      if (firstBlockItems.includes(entry.target)) {
+        entry.target.classList.add("slide-in-blurred-left");
+      }
+
+      if (secondBlockItems.includes(entry.target)) {
+        entry.target.classList.add("slide-in-blurred-right");
+      }
+      observer.unobserve(entry.target);
+    }
+  });
+};
+
+const observer = new IntersectionObserver(observerCallback, options);
+observer.observe(offeringsTitle);
+observer.observe(firstBlockParagraph);
+observer.observe(firstBlockHr);
+firstBlockItems.forEach((item) => observer.observe(item));
+secondBlockItems.forEach((item) => observer.observe(item));
 
 // Gallery Animation
-
 const gallerySection =
-  document.querySelector(".carousel-wrapper").parentElement; // Select the parent container of carousel-wrapper
+  document.querySelector(".carousel-wrapper").parentElement;
 
-// Select the specific elements inside that container
 const galleryHr = gallerySection.querySelector("hr");
 const galleryTitle = gallerySection.querySelector("h3");
 const galleryParagraph = gallerySection.querySelector("p");
 const carouselWrapper = gallerySection.querySelector(".carousel-wrapper");
 
-// Updated Intersection Observer callback for gallery animation
 const galleryObserverCallback = (entries, observer) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      // Animation for hr, h3, and p elements inside the gallery section
       if (
         entry.target === galleryHr ||
         entry.target === galleryTitle ||
@@ -146,64 +192,54 @@ const galleryObserverCallback = (entries, observer) => {
         entry.target.classList.add("tracking-in-expand");
       }
 
-      // Animate the carousel wrapper after the above elements
       if (entry.target === galleryParagraph) {
         carouselWrapper.classList.add("scale-in-hor-center");
       }
 
-      // Stop observing after animation is added
       observer.unobserve(entry.target);
     }
   });
 };
 
-// Create the observer instance for the gallery
 const galleryObserver = new IntersectionObserver(
   galleryObserverCallback,
-  { root: null, rootMargin: "0px", threshold: 0.3 } // Trigger when 30% of the element is in view
+  options
 );
 
-// Observe the gallery elements
 galleryObserver.observe(galleryHr);
 galleryObserver.observe(galleryTitle);
 galleryObserver.observe(galleryParagraph);
 galleryObserver.observe(carouselWrapper);
 
-// Adjust the h1 size on page load and on resize
-window.onload = () => {
-  changeH1size();
-};
-
-window.addEventListener("resize", () => {
-  changeH1size();
-});
-
+// Dynamic text adjustment
 function changeH1size() {
   const h1 = document.querySelector("#main-title");
   const titleParagraph = document.getElementById("paragraph-title");
-  const journeryTitle = document.getElementById("start-journey-title");
+  const journeyTitle = document.getElementById("start-journey-title");
 
   const screenWidth = window.innerWidth;
-  // Check window width and update the h1 text
+
   if (screenWidth < 500) {
     h1.textContent = "Villa Jure";
     titleParagraph.textContent = "Tranquility made timeless";
-    galleryTitle.textContent = "Villa's Gallery";
+    journeyTitle.textContent = "Start your dream.";
     galleryParagraph.textContent = "Explore beautiful spaces.";
-    journeryTitle.textContent = "Your journey starts here";
+    galleryTitle.textContent = "Villa's Gallery";
   } else if (screenWidth < 730) {
     h1.textContent = "Welcome to Villa Jure";
     titleParagraph.textContent = "Villa between sea and hills.";
+    journeyTitle.textContent = "Your journey starts here.";
     galleryParagraph.textContent =
       "Explore our gallery for beautiful spaces and serenity.";
-    journeryTitle.textContent = "Begin your journey with Villa Jure!";
   } else {
     h1.textContent = "Experience Luxury at Villa Jure";
     titleParagraph.textContent =
       "Your dream getaway awaits in beautiful Kastela";
-    galleryTitle.textContent = "Check out our gallery!";
+    journeyTitle.textContent = "Start your unforgettable journey.";
     galleryParagraph.textContent =
       "Browse through our gallery to see the villa's beautiful spaces and serene surroundings.";
-    journeryTitle.textContent = "Start Your Journey with Villa Jure Today!";
+    galleryTitle.textContent = "Check out our gallery!";
   }
 }
+window.addEventListener("resize", changeH1size);
+changeH1size();
