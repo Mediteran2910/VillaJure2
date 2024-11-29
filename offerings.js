@@ -124,7 +124,8 @@ closeButton.addEventListener("click", () => {
 
 // Define the intersection observer options
 const options = {
-  threshold: 0.3, // 50% of the element must be visible to trigger the animation
+  rootMargin: "0px 0px -50px 0px",
+  threshold: 0.5, // 50% of the element must be visible to trigger the animation
 };
 
 // Function to add animation classes for various elements
@@ -194,8 +195,17 @@ const offeringsDescription2 = document.querySelector(
 const offeringsDescription3 = document.querySelector(
   ".offerings-description:nth-of-type(3)"
 );
+
 const iconSection = document.querySelector(".icon-section");
 const hrElement = document.querySelector(".gallery-hr");
+
+// IntersectionObserver setup remains the same as beforer
+
+// Start observing the elements
+observer.observe(offeringsDescription1);
+observer.observe(offeringsDescription2);
+observer.observe(offeringsDescription3);
+observer.observe(iconSection);
 
 // Gallery Animation
 const gallerySection =
@@ -231,20 +241,11 @@ const galleryObserver = new IntersectionObserver(
   options
 );
 
+observer.observe(hrElement);
 galleryObserver.observe(galleryHr);
 galleryObserver.observe(galleryTitle);
 galleryObserver.observe(galleryParagraph);
 galleryObserver.observe(carouselWrapper);
-
-// Start observing the elements
-observer.observe(offeringsDescription1);
-observer.observe(offeringsDescription2);
-observer.observe(offeringsDescription3);
-observer.observe(iconSection);
-observer.observe(hrElement);
-observer.observe(galleryTitle);
-
-observer.observe(carouselWrapper);
 
 const menuIcon = document.getElementById("menu-icon");
 const closeMenuIcon = document.querySelector(".close-icon-menu");
