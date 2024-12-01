@@ -52,8 +52,11 @@
             <h2>High Season</h2>
           </div>
           <div class="pricing-details-wrapper">
-            <p class="price">290 <span class="euro-sign">€</span></p>
-            <p class="details-subtitle">Price:<span> 290€ per night</span></p>
+            <p class="price">
+              290 <span class="euro-sign">€</span
+              ><span class="per-night-span"> /per night</span>
+            </p>
+
             <p class="details-subtitle">
               Date:<span> June 15th – September 15th</span>
             </p>
@@ -72,8 +75,11 @@
             <h2>Pre Season</h2>
           </div>
           <div class="pricing-details-wrapper">
-            <p class="price">270 <span class="euro-sign">€</span></p>
-            <p class="details-subtitle">Price:<span> €270 per night</span></p>
+            <p class="price">
+              270 <span class="euro-sign">€</span
+              ><span class="per-night-span"> /per night</span>
+            </p>
+
             <p class="details-subtitle">
               Date:<span> May 1st – June 15th</span>
             </p>
@@ -94,8 +100,11 @@
             <h2>Low Season</h2>
           </div>
           <div class="pricing-details-wrapper">
-            <p class="price">250 <span class="euro-sign">€</span></p>
-            <p class="details-subtitle">Price:<span> €250 per night </span></p>
+            <p class="price">
+              250 <span class="euro-sign">€</span
+              ><span class="per-night-span"> /per night</span>
+            </p>
+
             <p class="details-subtitle">
               Date:<span> September 15th – November 1st</span>
             </p>
@@ -116,12 +125,13 @@
             <h2>Rest of the Year</h2>
           </div>
           <div class="pricing-details-wrapper">
-            <p class="price">190 <span class="euro-sign">€</span></p>
-            <p class="details-subtitle">Price:<span> €190 per night </span></p>
+            <p class="price">
+              190 <span class="euro-sign">€</span>
+              <span class="per-night-span">/per night</span>
+            </p>
             <p class="details-subtitle">
               Minimum Stays: <span> 3 nights </span>
             </p>
-
             <p class="season-description">
               During the off-season, Villa Jure offers a quieter, more relaxed
               stay. The serene winter months provide a unique experience for
@@ -131,6 +141,98 @@
           </div>
         </div>
       </section>
+      <section class="contact-wrapper">
+        <div class="contact-text">
+          <hr />
+          <h3>Reserve Your Stay</h3>
+          <p>
+            Interested in booking or have questions about the villa? Fill out
+            the form, and we’ll assist you promptly!
+          </p>
+        </div>
+        <form id="contact-form">
+          <div class="name-surname-wrapp">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Your first name"
+            />
+            <input
+              type="text"
+              id="surname"
+              name="surname"
+              required
+              placeholder="Your last name"
+            />
+          </div>
+          <div class="email-phone-wrapp">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="Your email"
+            />
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              required
+              placeholder="Your phone number"
+            />
+          </div>
+
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            required
+            placeholder="Your message"
+          ></textarea>
+
+          <button class="send-email-btn" type="button" onclick="sendEmail()">
+            SUBMIT
+          </button>
+        </form>
+        <p id="status-message"></p>
+      </section>
     </main>
+    <footer>
+      <div class="info-wrapper">
+        <div>
+          <h5 class="footer-title">About</h5>
+          <p>
+            Villa Jure, a family-owned home since the 1900s, <br />has been
+            lovingly preserved across generations, <br />blending tradition and
+            history.
+          </p>
+        </div>
+        <div>
+          <h5 class="footer-title">Contact</h5>
+          <div class="info-details">
+            <img src="icone/mail-white.png" class="footer-icons" alt="" /><span
+              >asego2311@gmail.com</span
+            >
+          </div>
+          <div class="info-details">
+            <img src="icone/phone-white.svg" class="footer-icons" alt="" />
+            <span>+385 99 6899 953</span>
+          </div>
+        </div>
+        <div>
+          <h5 class="footer-title">Address</h5>
+          <div class="info-details">
+            <img src="icone/location-white.svg" class="footer-icons" alt="" />
+            <span>Piske 11, 21216, Kaštel Stari</span>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="copyright">&copy; 2024 Villa Jure. All rights reserved.</div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="contact.js"></script>
   </body>
 </html>
