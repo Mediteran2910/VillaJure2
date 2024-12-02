@@ -96,9 +96,11 @@ nav {
 }
 
 #nav-book-button {
+  font-family: var(--title-font);
   border: 2px solid var(--paragraphs-color-light);
   background-color: rgb(55, 122, 0, 0);
   transition: transform 0.3s ease, border-radius 0.3s ease;
+  color: var(--titles-color-light);
 }
 
 .book-now {
@@ -923,9 +925,9 @@ footer div {
   display: none;
 }
 
-@media (max-width: 1550px) {
+@media (max-width: 1600px) {
   header > section {
-    width: 70%;
+    width: 78%;
   }
 }
 
