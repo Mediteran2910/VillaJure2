@@ -125,7 +125,7 @@ closeButton.addEventListener("click", () => {
 // Define the intersection observer options
 const options = {
   rootMargin: "0px 0px -50px 0px",
-  threshold: 0.5, // 50% of the element must be visible to trigger the animation
+  threshold: 0.3, // 50% of the element must be visible to trigger the animation
 };
 
 // Function to add animation classes for various elements
@@ -141,27 +141,27 @@ const handleIntersect = (entries, observer) => {
           entry.target ===
           document.querySelector(".offerings-description:nth-of-type(1)")
         ) {
-          image.classList.add("slide-in-blurred-right");
-          text.classList.add("slide-in-blurred-left");
+          image.classList.add("slide-in-right");
+          text.classList.add("slide-in-left");
         } else if (
           entry.target ===
           document.querySelector(".offerings-description:nth-of-type(2)")
         ) {
-          image.classList.add("slide-in-blurred-left");
-          text.classList.add("slide-in-blurred-right");
+          image.classList.add("slide-in-left");
+          text.classList.add("slide-in-right");
         } else if (
           entry.target ===
           document.querySelector(".offerings-description:nth-of-type(3)")
         ) {
-          image.classList.add("slide-in-blurred-right");
-          text.classList.add("slide-in-blurred-left");
+          image.classList.add("slide-in-right");
+          text.classList.add("slide-in-left");
         }
       }
 
-      // Handling for icon-section
-      if (entry.target.classList.contains("icon-section")) {
-        entry.target.classList.add("focus-in-expand-fwd");
-      }
+      // // Handling for icon-section
+      // if (entry.target.classList.contains("icon-section")) {
+      //   entry.target.classList.add("focus-in-expand-fwd");
+      // }
 
       // Handling for gallery (hr, h3, p)
       if (

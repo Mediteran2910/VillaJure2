@@ -240,6 +240,7 @@ article hr {
   width: 90%;
   height: 100%;
   padding: 10px 0px;
+  margin-bottom: 30px;
 }
 
 .first-block,
@@ -828,6 +829,7 @@ footer div {
 
   .price-wrapper {
     height: 470px;
+    margin-bottom: 20px;
   }
 
   .info-wrapper {

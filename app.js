@@ -150,15 +150,15 @@ const observerCallback = (entries, observer) => {
         entry.target === firstBlockParagraph ||
         entry.target === firstBlockHr
       ) {
-        entry.target.classList.add("slide-in-blurred-left");
+        entry.target.classList.add("slide-in-left");
       }
 
       if (firstBlockItems.includes(entry.target)) {
-        entry.target.classList.add("slide-in-blurred-left");
+        entry.target.classList.add("slide-in-left");
       }
 
       if (secondBlockItems.includes(entry.target)) {
-        entry.target.classList.add("slide-in-blurred-right");
+        entry.target.classList.add("slide-in-right");
       }
       observer.unobserve(entry.target);
     }
