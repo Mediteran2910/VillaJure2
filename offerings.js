@@ -269,18 +269,18 @@ function changeH1size() {
   if (screenWidth < 500) {
     h1.textContent = "Jure Charm";
     titleParagraph.textContent = "A peaceful oasis in Dalmatia.";
-    journeyTitle.textContent = "Start your dream.";
+
     galleryParagraph.textContent = "Explore beautiful spaces.";
     galleryTitle.textContent = "Villa's Gallery";
   } else if (screenWidth < 730) {
     h1.textContent = "Charm of Villa Jure";
-    journeyTitle.textContent = "Your journey starts here.";
+
     galleryParagraph.textContent =
       "Explore our gallery for beautiful spaces and serenity.";
   } else {
     h1.textContent = "Discover the charm of Villa Jure";
     titleParagraph.textContent = "An oasis of peace in the heart of Dalmatia.";
-    journeyTitle.textContent = "Start your unforgettable journey.";
+
     galleryParagraph.textContent =
       "Browse through our gallery to see the villa's beautiful spaces and serene surroundings.";
     galleryTitle.textContent = "Check out our gallery!";

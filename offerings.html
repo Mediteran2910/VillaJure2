@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Yeseva+One&display=swap"
       rel="stylesheet"
     />
+
     <title>Document</title>
   </head>
   <body>
@@ -506,14 +507,27 @@
           </div>
         </div>
       </section>
-      <section class="journey-wrapper">
-        <hr />
-        <h2 id="start-journey-title">
-          Start Your Journey with Villa Jure Today!
-        </h2>
-        <a href="contact.html" class="book-now">BOOK YOUR STAY</a>
-        <p>OR</p>
-        <p>Call or text: +385 99 6899 953</p>
+      <section class="location">
+        <article class="location-descripton">
+          <h3>Villa Jure's Location</h3>
+          <p>
+            Villa Jure is perfectly situated between the stunning mountains and
+            the Adriatic Sea, just 10 minutes from Split and a short 3 minute
+            drive to the beach.
+          </p>
+        </article>
+        <div class="google-map">
+          <gmp-map
+            center="43.55378723144531,16.36326026916504"
+            zoom="14"
+            map-id="DEMO_MAP_ID"
+          >
+            <gmp-advanced-marker
+              position="43.55378723144531,16.36326026916504"
+              title="My location"
+            ></gmp-advanced-marker>
+          </gmp-map>
+        </div>
       </section>
     </main>
     <footer>
@@ -549,6 +563,10 @@
       <hr />
       <div class="copyright">&copy; 2024 Villa Jure. All rights reserved.</div>
     </footer>
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDn649-pbRJQ2btnBteqK60zJByYFGvNBI&callback=console.debug&libraries=maps,marker&v=beta"
+    ></script>
     <script src="offerings.js"></script>
   </body>
 </html>
