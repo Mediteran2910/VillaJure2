@@ -966,7 +966,7 @@ footer {
 .footer-title {
   color: var(--titles-color-light);
   font-family: var(--title-font);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: 2px;
   margin-bottom: 20px;
@@ -1412,6 +1412,7 @@ footer div {
 
   .info-wrapper p {
     margin-bottom: 5px;
+    margin-top: 5px;
   }
 }
 

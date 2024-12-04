@@ -390,6 +390,7 @@ hr {
   color: var(--paragraphs-color-light);
   text-align: center;
   margin-top: 5px;
+  font-weight: 350;
 }
 
 .contact-text hr {
@@ -409,25 +410,48 @@ h3 {
 }
 
 textarea {
-  width: 95%;
-  padding: 20px 12px;
-  margin-top: 5px;
+  width: 100%;
   border-radius: 10px;
   border: 1.5px solid #b7d0a1;
-  margin: 10px 15px;
   background-color: #0c240c;
   color: var(--titles-color-light);
   font-family: "Arial", sans-serif;
+  padding: 0px;
+  padding: 10px;
+  margin-block: 15px;
+  padding-block: 25px;
+  box-sizing: border-box;
 }
 
 input {
   color: var(--titles-color-light);
-  width: 100%;
-  padding: 20px 12px;
   border-radius: 10px;
   border: 1.5px solid #b7d0a1;
-  margin: 10px 15px;
   background-color: #0c240c;
+  padding: 15px 20px;
+  width: 48%;
+  box-sizing: border-box;
+}
+
+.name-surname-wrapp,
+.email-phone-wrapp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 10px 0px;
+}
+
+form {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-block: 40px;
 }
 
 input:focus,
@@ -461,26 +485,6 @@ textarea:focus {
   font-weight: 300;
   font-size: 1.2rem;
   margin-top: 5px;
-}
-
-.name-surname-wrapp,
-.email-phone-wrapp {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-form {
-  min-width: 70%;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 30px 10px;
-  margin-bottom: 15px;
 }
 
 input::placeholder,
@@ -771,10 +775,6 @@ footer div {
   .contact-text {
     width: 60%;
   }
-
-  form {
-    width: 80%;
-  }
 }
 
 @media (max-width: 800px) {
@@ -806,7 +806,7 @@ footer div {
   }
 
   form {
-    width: 85%;
+    width: 80%;
   }
 }
 
@@ -844,19 +844,39 @@ footer div {
 
   .info-wrapper p {
     margin-bottom: 5px;
+    margin-top: 5px;
   }
 
   .contact-text {
     width: 90%;
   }
 
-  .email-phone-wrapp {
-    flex-direction: column;
+  .send-email-btn {
+    width: 40%;
+  }
+  form {
     width: 90%;
   }
 
-  .send-email-btn {
-    width: 40%;
+  .email-phone-wrapp {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #email,
+  #phone {
+    width: 100%;
+  }
+
+  #email {
+    margin-bottom: 25px;
+  }
+
+  .name-surname-wrapp input {
+    width: 48%;
   }
 }
 
@@ -872,20 +892,5 @@ footer div {
   .close-icon-menu {
     margin-top: 0px;
     margin-right: 70px;
-  }
-
-  form {
-    width: 95%;
-  }
-
-  #surname,
-  #name {
-    width: 100%;
-    margin: 10px;
-  }
-
-  textarea {
-    margin: 10px;
-    padding: 20px 6px;
   }
 }
