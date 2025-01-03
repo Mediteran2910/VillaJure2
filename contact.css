@@ -113,6 +113,11 @@ nav {
   font-family: var(--title-font);
 }
 
+.logo {
+  height: 100px;
+  width: auto;
+}
+
 /* Hover effect with scaling */
 .book-now:hover {
   transform: scale(1.1); /* Slightly increase size on hover */

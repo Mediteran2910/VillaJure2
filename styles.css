@@ -115,6 +115,11 @@ nav {
   font-family: var(--title-font);
 }
 
+.logo {
+  height: 100px;
+  width: auto;
+}
+
 /* Animation for sliding in from the bottom */
 @keyframes slideIn {
   from {

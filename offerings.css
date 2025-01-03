@@ -60,6 +60,11 @@ header {
   margin-bottom: 0px;
 }
 
+.logo {
+  height: 100px;
+  width: auto;
+}
+
 nav {
   display: flex;
   align-items: center;
