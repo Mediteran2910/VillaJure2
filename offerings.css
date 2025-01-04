@@ -278,7 +278,7 @@ article img {
   margin-bottom: 25px;
 }
 
-.offerings-description h3 {
+.offerings-description h2 {
   font-family: var(--title-font);
   color: var(--titles-color-dark);
   letter-spacing: 1.2px;
@@ -664,7 +664,7 @@ article img {
   width: 60%;
 }
 
-.icons-text h2 {
+.icons-text h3 {
   font-size: 2rem;
   font-family: var(--title-font);
   color: var(--titles-color-dark);
@@ -1329,7 +1329,7 @@ gmp-map {
     width: 95%;
   }
 
-  .offerings-description h3 {
+  .offerings-description h2 {
     font-size: 1.75rem;
   }
 
@@ -1350,7 +1350,7 @@ gmp-map {
     margin-right: 60px;
   }
 
-  .offerings-description h3 {
+  .offerings-description h2 {
     font-size: 1.5rem;
   }
 }
@@ -1362,7 +1362,7 @@ gmp-map {
     width: 60px;
   }
 
-  .offerings-description h3 {
+  .offerings-description h2 {
     font-size: 2rem;
   }
 
@@ -1485,7 +1485,7 @@ gmp-map {
   .gallery-wrapper h3 {
     font-size: 2.5rem;
   }
-  .offerings-description h3 {
+  .offerings-description h2 {
     font-size: 1.75rem;
   }
 
@@ -1528,11 +1528,11 @@ gmp-map {
     margin-bottom: 5px;
   }
 
-  .offerings-description h3 {
+  .offerings-description h2 {
     margin-top: 5px;
   }
 
-  .icons-text h2 {
+  .icons-text h3 {
     font-size: 1.75rem;
   }
 
