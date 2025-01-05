@@ -239,8 +239,8 @@ article hr {
 
 .price-section {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   width: 90%;
   height: 100%;
@@ -250,7 +250,17 @@ article hr {
 
 .first-block,
 .second-block {
-  width: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.first-block-nest-no1,
+.first-block-nest-no2,
+.second-block-nest-no1,
+.second-block-nest-no2 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -259,7 +269,7 @@ article hr {
 
 .price-wrapper {
   margin: 10px 15px;
-  width: 100%;
+  width: 270px;
   height: 530px;
   background-color: #fbfbf6;
   display: flex;
@@ -298,6 +308,31 @@ article hr {
 
 .second-block .price-wrapper:nth-child(2) .season {
   background-color: #90a955;
+}
+
+#high-season {
+  background-color: #143601;
+}
+#late-high-season {
+  background-color: #10451d;
+}
+#early-summer {
+  background-color: #155d27;
+}
+#late-summer {
+  background-color: #1a7431;
+}
+#pre-season {
+  background-color: #3b7d3b;
+}
+#post-season {
+  background-color: #528552;
+}
+#spring-season {
+  background-color: #638a63;
+}
+#autumn-season {
+  background-color: #93aa80;
 }
 
 .price {
@@ -894,5 +929,43 @@ footer div {
   .close-icon-menu {
     margin-top: 0px;
     margin-right: 70px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .first-block,
+  .second-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .price-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .first-block-nest-no1,
+  .first-block-nest-no2,
+  .second-block-nest-no1,
+  .second-block-nest-no2 {
+    flex-direction: row;
+  }
+
+  .price-wrapper {
+    width: 100%;
+    height: 500px;
+  }
+}
+
+@media (max-width: 656px) {
+  .first-block-nest-no1,
+  .first-block-nest-no2,
+  .second-block-nest-no1,
+  .second-block-nest-no2 {
+    flex-direction: column;
+    width: 90%;
   }
 }

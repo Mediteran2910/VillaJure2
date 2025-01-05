@@ -1,5 +1,5 @@
 (function () {
-  emailjs.init("JpjMG4Ch4sECdb8eF"); // Replace with your EmailJS Public Key (User ID)
+  emailjs.init("UoQCySpt9VEpqiVqv"); // Replace with your EmailJS Public Key (User ID)
 })();
 
 function sendEmail() {
@@ -11,7 +11,7 @@ function sendEmail() {
   const phoneNum = document.getElementById("phone").value;
 
   emailjs
-    .send("service_xmwx2zj", "template_0p9687u", {
+    .send("service_kai7usc", "template_0p9687u", {
       to_name: "Wind",
       from_name: from_name,
       from_surname: from_surname,
