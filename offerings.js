@@ -158,11 +158,6 @@ const handleIntersect = (entries, observer) => {
         }
       }
 
-      // // Handling for icon-section
-      // if (entry.target.classList.contains("icon-section")) {
-      //   entry.target.classList.add("focus-in-expand-fwd");
-      // }
-
       // Handling for gallery (hr, h3, p)
       if (
         entry.target.classList.contains("gallery-hr") ||

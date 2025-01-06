@@ -1,18 +1,23 @@
 (function () {
-  emailjs.init("UoQCySpt9VEpqiVqv"); // Replace with your EmailJS Public Key (User ID)
+  emailjs.init("publickey");
 })();
 
 function sendEmail() {
-  const to_name = "Recipient Name"; // Replace with the recipient's name if desired
-  const from_name = document.getElementById("name").value;
-  const from_surname = document.getElementById("surname").value;
-  const message = document.getElementById("message").value;
-  const email = document.getElementById("email").value;
-  const phoneNum = document.getElementById("phone").value;
+  const from_name = document.getElementById("name").value.trim();
+  const from_surname = document.getElementById("surname").value.trim();
+  const message = document.getElementById("message").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phoneNum = document.getElementById("phone").value.trim();
+
+  if (!from_name || !from_surname || !message || !email || !phoneNum) {
+    document.getElementById("status-message").innerText =
+      "Please fill out all fields.";
+    return;
+  }
 
   emailjs
-    .send("service_kai7usc", "template_0p9687u", {
-      to_name: "Wind",
+    .send("serviceid", "templateid", {
+      to_name: "Ana",
       from_name: from_name,
       from_surname: from_surname,
       message: message,
@@ -24,8 +29,9 @@ function sendEmail() {
         "Email sent successfully!";
     })
     .catch((error) => {
+      console.log(error);
       document.getElementById("status-message").innerText =
-        "Error sending email: " + error.text;
+        "Error sending email, we are having the problems with server, you can contact us on email or phone number below ";
     });
 }
 
@@ -33,15 +39,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const priceWrappers = document.querySelectorAll(".price-wrapper");
 
   const observerOptions = {
-    root: null, // Use the viewport as the root
-    threshold: 0.3, // Trigger when 30% of the element is visible
+    root: null,
+    threshold: 0.3,
   };
 
   const observerCallback = (entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("swing-in-top-fwd");
-        observer.unobserve(entry.target); // Stop observing once animation starts
+        observer.unobserve(entry.target);
       }
     });
   };
@@ -74,7 +80,6 @@ function changeH1size() {
     titleParagraph.textContent = "Where luxury meets ease.";
   } else if (screenWidth < 730) {
     h1.textContent = "Your Paradise Awaits";
-    // titleParagraph.textContent = "Villa between sea and hills.";
   } else {
     h1.textContent = "Reserve Your Slice of Paradise";
     titleParagraph.textContent = "Where luxury meets effortless relaxation.";
