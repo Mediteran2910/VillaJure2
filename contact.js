@@ -1,5 +1,5 @@
 (function () {
-  emailjs.init("bqhW29hm1GzexxE62");
+  emailjs.init("AN4_T3f-H85b7z8dK");
 })();
 
 function sendEmail() {
@@ -16,7 +16,7 @@ function sendEmail() {
   }
 
   emailjs
-    .send("service_0v1ztm1", "template_3o7lroo", {
+    .send("service_iwr0hfb", "template_3o7lroo", {
       to_name: "Ana",
       from_name: from_name,
       from_surname: from_surname,
