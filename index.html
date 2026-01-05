@@ -3,41 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Experience the charm of Villa Jure, a serene retreat in Kaštela, Croatia near the Split. Discover a private pool, stunning views, a family-friendly playground, and elegant interiors crafted from Brač stone. Your perfect getaway awaits."
+    />
+    <meta
+      name="keywords"
+      content="Villa Jure, luxury villa Croatia, Kaštela villa rental, private pool villa, family-friendly villa, Adriatic Sea villa, Brač stone house, serene retreat Croatia, Split accommodations, mountain villa near Split, Croatia, summer, Split Croatia, rentals, villa, heated pool, jacuzzi, pool"
+    />
+    <meta
+      name="keywords"
+      content="Villa Jure, luxury villa Croatia, Kaštela villa rental, private pool villa, family-friendly villa, Adriatic Sea villa, Brač stone house, serene retreat Croatia, Split accommodations, mountain villa near Split, Croatia, summer, Split Croatia, rentals, villa, heated pool, jacuzzi, pool"
+    />
+    <meta
+      property="og:title"
+      content="Villa Jure – Luxury Retreat Near Split, Croatia"
+    />
+    <meta
+      property="og:description"
+      content="Discover Villa Jure in Kaštela, Croatia – a serene getaway with a private pool, stunning Adriatic views, family-friendly amenities, and timeless interiors crafted from Brač stone."
+    />
+    <meta property="og:image" content="https://https://imgur.com/a/6v5b7fv" />
+    <meta property="og:url" content="https://Villajure.com" />
+    <meta property="og:type" content="website" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
+      rel="preload"
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Yeseva+One&display=swap"
-      rel="stylesheet"
+      as="style"
+      type="font/woff2"
+      crossorigin="anonymous"
     />
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    /> -->
-    <title>Document</title>
+
+    <link rel="icon" href="logo/fulllogo-window.png" type="img/png" />
+    <title>Villa Jure – Luxury Retreat Near Split, Croatia</title>
   </head>
+
   <body>
     <header>
       <nav>
-        <div class="smaller-screen-nav" display="none">
-          <img src="logo/logo gotov.png" alt="" height="100px" />
-          <img src="icone/Menu.png" alt="" />
-
+        <div class="smaller-screen-nav">
+          <div class="logo-menu-icons">
+            <img
+              src="logo/fulllogo-page-header.png"
+              alt="logo of the site, contains old keys and name of the villa"
+              class="logo"
+            />
+            <img
+              src="icone/Menu.png"
+              id="menu-icon"
+              alt="burger menu for the navigation between pages"
+            />
+          </div>
           <div class="nav-links">
+            <img src="icone/Close-light-color.png" class="close-icon-menu" />
             <a href="index.html">HOME</a>
             <a href="offerings.html">OFFERINGS</a>
-            <a href="">CONTACT</a>
+            <a href="contact.html">CONTACT</a>
           </div>
         </div>
         <div class="wider-screen-nav">
-          <h3>Villa Jure</h3>
+          <img
+            src="logo/fulllogo-page-header.png"
+            alt="logo of the site, contains old keys and name of the villa"
+            class="logo"
+          />
           <div class="nav-links">
             <a href="index.html">HOME</a>
             <a href="offerings.html">OFFERINGS</a>
-            <a href="">CONTACT</a>
-            <a href="" class="book-now" id="nav-book-button">BOOK YOUR STAY</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="contact.html" class="book-now" id="nav-book-button"
+              >BOOK YOUR STAY</a
+            >
           </div>
         </div>
       </nav>
@@ -46,7 +86,7 @@
         <p id="paragraph-title">
           Your dream getaway awaits in beautiful Kastela
         </p>
-        <a href="" class="book-now">BOOK YOUR STAY</a>
+        <a href="contact.html" class="book-now">BOOK YOUR STAY</a>
       </section>
     </header>
     <main>
@@ -54,6 +94,7 @@
         <img
           src="smanjene slike/story-cutwebp.webp"
           alt="Villa with a private pool and spacious outdoor area, with mountains around it"
+          loading="lazy"
         />
         <article class="story-villa-article">
           <hr />
@@ -87,10 +128,13 @@
                 src="smanjene slike/pool-cut-homepage.webp"
                 alt="Villa with a private pool with luxurious loungers "
                 id="pool-img"
+                loading="lazy"
               />
               <div>
-                <h3>Swimming in the pool beneath the mountains</h3>
-                <p>Private pool with luxurious loungers.</p>
+                <h3>Swimming in the heated pool beneath the mountains</h3>
+                <p>
+                  Private heated pool with luxurious loungers and a jacuzzi.
+                </p>
                 <a href="offerings.html" class="learn-more-offerings"
                   >LEARN MORE...
                 </a>
@@ -101,6 +145,7 @@
                 src="smanjene slike/view-cut-homepage.webp"
                 alt="Scenic view of the Adriatic Sea from the villa"
                 id="view-img"
+                loading="lazy"
               />
               <div>
                 <h3>Enjoy the breathtaking landscapes</h3>
@@ -117,6 +162,7 @@
                 src="smanjene slike/childrenplay-cut-homepage.webp"
                 alt="Private outdoor children's playground with swing, slide, and trampoline"
                 id="playground-img"
+                loading="lazy"
               />
               <div>
                 <h3>Outdoor children’s playground</h3>
@@ -131,6 +177,7 @@
                 src="smanjene slike/IMG_8820sofa-cut-homepage.webp"
                 alt="Living room with sofa, wooden and stone interior design"
                 id="accomoditation-img"
+                loading="lazy"
               />
               <div>
                 <h3>Stunning Villa Accommodation</h3>
@@ -145,7 +192,7 @@
         <hr id="full-width-hr" />
         <div class="small-book-stay">
           <h3>Ready for your Escape?</h3>
-          <a href="" class="book-now">BOOK YOUR STAY</a>
+          <a href="contact.html" class="book-now">BOOK YOUR STAY</a>
         </div>
       </section>
       <section class="gallery-wrapper">
@@ -162,224 +209,266 @@
               src="smanjene slike/1 naslovna.webp"
               alt="View of the villa from the outside, with a swimming pool and lounge chairs, at the foot of the mountain."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/3 (1).webp"
               alt="View from the villa overlooking the Adriatic Sea, islands, Split, and Kaštela."
               class="carousel-item"
+              loading="lazy"
             />
 
             <img
               src="smanjene slike/3 (2).webp"
               alt="Bird's eye view of the villa and its surroundings, featuring the villa, parking area, pool, children's private outdoor playground, and garden."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/IMG_9003.webp"
               alt="View of the villa's private pool through the branches, with lounge chairs and umbrellas by the poolside."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/DJI_0226.webp"
               alt="View of the villa at dusk from a semi-bird's eye perspective, showcasing the villa, pool, garden with olive trees."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/5.webp"
               alt="Half-bird's-eye view of the villa's pool and garden with olive trees, overlooking the Adriatic Sea and nearby islands."
               class="carousel-item"
+              loading="lazy"
             />
 
             <img
               src="smanjene slike/39.webp"
               alt="Pool and sun loungers with the front side of the villa during the day."
               class="carousel-item"
+              loading="lazy"
             />
 
             <img
               src="smanjene slike/IMG_8989.webp"
               alt="Bird's-eye view of the villa, pool, sun loungers, entire paved yard, garden, and olive trees."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/IMG_9128.webp"
               alt="View of the front side of the illuminated villa at dusk, a stone villa with an entrance area."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/IMG_9123.webp"
               alt="View of the illuminated pool, villa, and mountain at dusk, featuring the front side of the villa, the pool with lounge chairs, and the house's entrance area."
               class="carousel-item"
+              loading="lazy"
             />
 
             <img
               src="smanjene slike/36.webp"
               alt="Modern, luxurious sun loungers in front of the villa, illuminated by the dark blue light of the pool at night, with the villa visible in the background."
               class="carousel-item"
+              loading="lazy"
             />
 
             <img
               src="smanjene slike/IMG_9138.webp"
               alt="Image of the pool at night, with sun loungers and the villa in the background, dominated by the blue light from the pool."
               class="carousel-item"
+              loading="lazy"
             />
 
             <img
               src="smanjene slike/31.webp"
               alt="Outdoor dining table in front of the villa with a traditional Croatian barbecue and a lit fire."
               class="carousel-item"
+              loading="lazy"
             />
 
             <img
               src="smanjene slike/32.webp"
               alt="Outdoor dining table in front of the villa set with Croatian food, wine, and plates, with a traditional Croatian barbecue and lit fire in the background."
               class="carousel-item"
+              loading="lazy"
             />
 
             <img
               src="smanjene slike/IMG_8820.webp"
               alt="Living room with a stone and wood interior, featuring a large sofa and a television."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/IMG_8827.webp"
               alt="Beautiful white kitchen with a stone display cabinet and wine racks."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/IMG_8853.webp"
               alt="Image of a white kitchen with a stone wine rack, large sofa, stone walls, and a wooden ceiling."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/IMG_8854.webp"
               alt="White kitchen with wooden brown entrance doors to the house and a refrigerator in the kitchen."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/IMG_8857.webp"
               alt="Living room with a large sofa, television, wooden stairs to the second floor, dining table, and brown wooden entrance doors."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/IMG_8851.webp"
               alt="Indoor table with blue chairs, trays of Croatian food, and bottles of Croatian wine on the table."
               class="carousel-item"
+              loading="lazy"
             />
 
             <img
               src="smanjene slike/IMG_8532523.webp"
               alt="Dining table for eight, with blue chairs and a wooden table, set in an interior of wood and stone."
               class="carousel-item"
+              loading="lazy"
             />
 
             <img
               src="smanjene slike/IMG_8869.webp"
               alt="Attic room with a wooden ceiling, a double bed with beautiful bedding and pillows, nightstands on both sides of the bed, a large wardrobe, and lamps on the nightstands."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/IMG_8876.webp"
               alt="Relaxation sofa in the room with a chair and books on it, large wooden wardrobe for clothes, located in the attic."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/IMG_8878.webp"
               alt="Room with a double bed and sofa, in the attic, featuring a wooden wardrobe and parquet flooring."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/IMG_8881.webp"
               alt="Room with an en-suite bathroom (WC), a double bed, air conditioning, a red wall, and wooden wardrobes."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/IMG_8896.webp"
               alt="Second kitchen in the house, in white."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/IMG_8899.webp"
               alt="Room with an en-suite bathroom, air conditioning, television, double bed, and wardrobe."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/IMG_8903.webp"
               alt="Room with a double bed, one red wall and one white wall, a window, and nightstands on each side of the bed."
               class="carousel-item"
+              loading="lazy"
             />
 
             <img
               src="smanjene slike/IMG_8906.webp"
               alt="Modern bathroom connected to the room, with small mosaic tiles, a shower cabin, toilet, sink, and wooden cabinets."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/IMG_8866.webp"
               alt="Bathroom with a sink, toilet, shower cabin, cabinet, and brown tiles."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/22.webp"
               alt="Restroom with a sink, a mirror, and small white tiles."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/IMG_8907.webp"
               alt="Outdoor wooden structure with two covered parking spaces and an enclosed area for social games and entertainment."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/IMG_8942.webp"
               alt="Outdoor wooden structure, half of which consists of two covered parking spaces, and the other half is an enclosed playroom."
               class="carousel-item"
+              loading="lazy"
             />
 
             <img
               src="smanjene slike/IMG_8911.webp"
               alt="Enclosed outdoor wooden space designed for entertainment, equipped with a dartboard, foosball table, and billiards."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/IMG_8920.webp"
               alt="Enclosed outdoor wooden space designed for entertainment, equipped with a dartboard, foosball table, and billiards, picture from different angle."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/IMG_8927.webp"
               alt="Same enclosed outdoor wooden space, viewed from a different angle, featuring a dartboard, foosball table, and billiards."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/IMG_8933.webp"
               alt="Front view of the house with a stone facade, a column, outdoor dining table, entrance to the villa, and windows."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/28.webp"
               alt="Outdoor wooden dining table in front of the villa."
               class="carousel-item"
+              loading="lazy"
             />
 
             <img
               src="smanjene slike/IMG_8950.webp"
               alt="Private outdoor children's playground in the garden of the house, equipped with swings, a slide, and a trampoline."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/IMG_8953.webp"
               alt="Same private outdoor children's playground in the garden of the house, viewed from a different angle, featuring swings, a slide, and a trampoline."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/IMG_8958.webp"
               alt="Outdoor old stone table beneath two olive trees, next to the pool, with wooden benches around the table."
               class="carousel-item"
+              loading="lazy"
             />
             <img
               src="smanjene slike/IMG_8946.webp"
               alt="Gym in the villa's basement, equipped with a treadmill, a stationary bike, a shoulder or chest workout machine, and weights."
               class="carousel-item"
+              loading="lazy"
             />
           </div>
           <button class="carousel-button right" id="next-btn">&#9654;</button>
@@ -387,13 +476,17 @@
 
         <!-- Modal for enlarged image -->
         <div id="modal" class="modal">
-          <span class="close-btn">X</span>
           <img
             id="modal-image"
             class="modal-image"
             src=""
             alt="Enlarged Image"
           />
+          <div class="modal-navigation">
+            <button id="modal-prev-btn">&#9664;</button>
+            <button class="close-btn">X</button>
+            <button id="modal-next-btn">&#9654;</button>
+          </div>
         </div>
       </section>
       <section class="journey-wrapper">
@@ -401,7 +494,7 @@
         <h2 id="start-journey-title">
           Start Your Journey with Villa Jure Today!
         </h2>
-        <a href="" class="book-now">BOOK YOUR STAY</a>
+        <a href="contact.html" class="book-now">BOOK YOUR STAY</a>
         <p>OR</p>
         <p>Call or text: +385 99 6899 953</p>
       </section>
@@ -409,25 +502,36 @@
     <footer>
       <div class="info-wrapper">
         <div>
-          <h5 class="footer-title">About</h5>
+          <h3 class="footer-title">About</h3>
           <p>
-            Villa Jure, a family-owned home since the 1900s, has been lovingly
-            preserved across generations, blending tradition and history.
+            Villa Jure, a family-owned home since the 1900s, <br />has been
+            lovingly preserved across generations, <br />blending tradition and
+            history.
           </p>
         </div>
         <div>
-          <h5 class="footer-title">Contact</h5>
-          <p>asego2311@gmail.com</p>
-          <p>+385 99 6899 953</p>
+          <h3 class="footer-title">Contact</h3>
+          <div class="info-details">
+            <img src="icone/mail-white.png" class="footer-icons" alt="" /><span
+              >asego2311@gmail.com</span
+            >
+          </div>
+          <div class="info-details">
+            <img src="icone/phone-white.svg" class="footer-icons" alt="" />
+            <span>+385 99 6899 953</span>
+          </div>
         </div>
         <div>
-          <h5 class="footer-title">Address</h5>
-          <p>Piske 11, 21216, Kaštel Stari</p>
+          <h3 class="footer-title">Address</h3>
+          <div class="info-details">
+            <img src="icone/location-white.svg" class="footer-icons" alt="" />
+            <span>Put Vlačina 3, 21214, Kaštel Lukšić</span>
+          </div>
         </div>
       </div>
       <hr />
       <div class="copyright">&copy; 2024 Villa Jure. All rights reserved.</div>
     </footer>
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
   </body>
 </html>
