@@ -338,8 +338,8 @@ article hr {
 .price {
   font-family: var(--title-font);
   font-family: var(--titles-color-dark);
-  font-size: 2rem;
-
+  font-size: 1.2rem;
+  font-weight: 600;
   margin-bottom: 30px;
   margin-top: 20px;
 }
